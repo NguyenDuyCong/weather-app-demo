@@ -88,6 +88,7 @@ app.post("/", (req, res) => {
   });
 });
 
-app.listen(5000, () => {
-  console.log(`App listen on port 5000`);
+let PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`App listen on port ${PORT}`);
 });
