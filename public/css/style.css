@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
+body {
+    width: auto;
+    margin: 0 auto;
+    font-family: "Open Sans", sans-serif;
+    background-image: url("../images/pexels-pixabay-209831.jpg");
+    background-size: cover;
+    font-size: 20px;
+  }
+  
+  /* This will format the whole fieldset content*/
+
+.container {
+    margin-top: 10vh;
+}  
+
+.card {
+    background-color: #ffffff;
+    border-radius: 50px;
+    color: #6f707d;
+    font-family: 'Marcellus', serif
+}
+
+#heading {
+    font-size: 3em;
+    color: #2b304d
+}
+
+.temp {
+    place-items: center
+}
+
+.temp-details>p>span,
+.grey {
+    color: #a3acc1;
+    font-size: 1em;
+}
+
+.fa {
+    color: #a5a5b1
+}
+
+*:focus {
+    outline: none
+}

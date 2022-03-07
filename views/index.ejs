@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- from group  -->
+      <form action="/" method="post" class="my-5">
+        <div class="form-row justify-content-md-center">
+          <div class="my-3 text-white">
+            Writing the city you want to check the weather
+          </div>
+        </div>
+        <div class="form-row justify-content-md-center">
+          <div class="col-md-auto mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="inputCity"
+              name="city"
+              placeholder="Enter city"
+            />
+          </div>
+          <div class="col-md-auto mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="inputCountry"
+              name="country"
+              placeholder="Enter country (optional)"
+            />
+          </div>
+          <div class="col-md-auto mb-3">
+            <button type="submit" class="btn btn-primary">Get Weather</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- display weather -->
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <% if (weather !== null) { %>
+          <div class="col-12 col-md-4 col-sm-12 col-xs-12">
+            <div class="card p-4">
+              <div class="row">
+                <h6 class="col"><%= place %></h6>
+                <h6 class="col"><%= timezone %></h6>
+              </div>
+              <div class="d-flex flex-column temp mt-5 mb-3">
+                <h1 class="mb-0 font-weight-bold" id="heading">
+                  <%= temp %>° C
+                </h1>
+                <span class="small grey"><%= description %></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div class="temp-details">
+                  <p class="my-1">
+                    <i class="fa-solid fa-wind"></i>
+                    <span> <%= wind %> meter/sec </span>
+                  </p>
+                  <p class="my-1">
+                    <i class="fa-solid fa-droplet"></i>
+                    <span> <%= humidity %> %</span>
+                  </p>
+                  <p class="my-1">
+                    <i class="fa-solid fa-eye"></i>
+                    <span> <%= visibility %> meter</span>
+                  </p>
+                </div>
+                <div>
+                  <img src="<%= icon %>" width="100px" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } else { %>
+          <p><%= error %></p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
