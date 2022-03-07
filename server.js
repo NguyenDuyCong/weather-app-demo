@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
   res.render("index", { weather: null, error: null });
 });
 
-app.post("/", (req, res) => {
+app.post("/weather", (req, res) => {
   let city = encodeURI(req.body.city);
   let country = encodeURI(req.body.country) || "";
 
